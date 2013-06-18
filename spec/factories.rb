@@ -1,12 +1,3 @@
-#FactoryGirl.define do
-#  factory :user do
-#    name "shin"
-#    email "shin.php@gmail.com"
-#    password "ps2ps2ps2"
-#    password_confirmation "ps2ps2ps2"
-#  end
-#end
-
 FactoryGirl.define do
   factory :user do
     sequence(:name)  { |n| "Person #{n}" }
@@ -17,5 +8,10 @@ FactoryGirl.define do
     factory :admin do
       admin true
     end
+  end
+
+  factory :micropost do
+    content "Lorem ipsum"
+    user
   end
 end
